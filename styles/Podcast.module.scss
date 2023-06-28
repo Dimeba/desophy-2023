@@ -1,0 +1,88 @@
+@use 'base';
+
+.podcast {
+	background-color: base.$color-main;
+	padding-bottom: calc(base.$margin * 2);
+	margin-top: calc(base.$margin * 2);
+
+	* {
+		color: white;
+	}
+}
+
+.podcastText {
+	grid-column: 3 / 7;
+	display: flex;
+	flex-direction: column;
+	gap: calc(base.$gap / 2);
+}
+
+.episode {
+	grid-column: 8 / 11;
+	display: flex;
+	gap: base.$gap;
+}
+
+.episodeText {
+	display: flex;
+	flex-direction: column;
+	gap: calc(base.$gap / 2);
+}
+
+.episodeText h3,
+.episodeText p {
+	text-wrap: balance;
+	margin: 0;
+}
+
+.episodeDate {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+
+.episodePhotos {
+	flex: 0 0 42%;
+}
+
+.episodePhoto {
+	position: relative;
+	width: 100%;
+
+	aspect-ratio: 1/1;
+}
+
+@media screen and (max-width: 1640px) {
+	.episode {
+		grid-column: span 4;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.podcastText {
+		grid-column: 1 / 5;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.podcast {
+		padding-bottom: base.$margin;
+		margin-top: base.$margin;
+	}
+
+	.podcastText {
+		grid-column: span 2;
+	}
+
+	.episode {
+		flex-direction: column-reverse;
+	}
+
+	.episodePhotos {
+		flex: 0 0 42%;
+		display: flex;
+	}
+
+	.episodePhoto {
+		width: 50%;
+	}
+}
