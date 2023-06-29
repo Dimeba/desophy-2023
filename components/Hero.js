@@ -21,7 +21,7 @@ const Hero = ({ title }) => {
 							<Button buttonWhite={true}>Discover Our Services</Button>
 						</Link>
 						<Link href='#contact' scroll={false} passHref>
-							<Button buttonWhite={true}>Get In Touch</Button>
+							<Button buttonWhite={true}>Let's Talk</Button>
 						</Link>
 					</div>
 				</div>

@@ -41,7 +41,7 @@ const Nav = () => {
 	}
 
 	// navigation
-	const { navigation } = useNavContext()
+	const { navigation, showPodcast, showShop } = useNavContext()
 
 	return (
 		<nav ref={targetRef}>
@@ -73,13 +73,17 @@ const Nav = () => {
 								<li onClick={() => closeMenu()}>{navigation.services}</li>
 							</Link>
 
-							<Link href='#podcast' scroll={false} passHref>
-								<li onClick={() => closeMenu()}>{navigation.podcast}</li>
-							</Link>
+							{showPodcast && (
+								<Link href='#podcast' scroll={false} passHref>
+									<li onClick={() => closeMenu()}>{navigation.podcast}</li>
+								</Link>
+							)}
 
-							<Link href='#shop' scroll={false} passHref>
-								<li onClick={() => closeMenu()}>{navigation.shop}</li>
-							</Link>
+							{showShop && (
+								<Link href='#shop' scroll={false} passHref>
+									<li onClick={() => closeMenu()}>{navigation.shop}</li>
+								</Link>
+							)}
 
 							<Link href='#contact' scroll={false} passHref>
 								<li onClick={() => closeMenu()}>{navigation.contact}</li>

@@ -4,6 +4,8 @@ export const NavContext = createContext()
 export const NavContextProvider = ({ children }) => {
 	const [navigation, setNavigation] = useState()
 	const [servicesNav, setServicesNav] = useState()
+	const [showPodcast, setShowPodcast] = useState()
+	const [showShop, setShowShop] = useState()
 
 	return (
 		<NavContext.Provider
@@ -11,7 +13,11 @@ export const NavContextProvider = ({ children }) => {
 				navigation,
 				setNavigation,
 				servicesNav,
-				setServicesNav
+				setServicesNav,
+				showPodcast,
+				setShowPodcast,
+				showShop,
+				setShowShop
 			}}
 		>
 			{children}

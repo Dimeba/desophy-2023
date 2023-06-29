@@ -12,7 +12,7 @@ const Footer = () => {
 	const year = new Date().getFullYear()
 
 	// navigation
-	const { navigation, servicesNav } = useNavContext()
+	const { navigation, servicesNav, showPodcast, showShop } = useNavContext()
 
 	return (
 		<footer className={styles.footer}>
@@ -24,13 +24,17 @@ const Footer = () => {
 								<li>{navigation.about}</li>
 							</Link>
 
-							<Link href='#podcast' scroll={false} passHref>
-								<li>{navigation.podcast}</li>
-							</Link>
+							{showPodcast && (
+								<Link href='#podcast' scroll={false} passHref>
+									<li>{navigation.podcast}</li>
+								</Link>
+							)}
 
-							<Link href='#shop' scroll={false} passHref>
-								<li>{navigation.shop}</li>
-							</Link>
+							{showShop && (
+								<Link href='#shop' scroll={false} passHref>
+									<li>{navigation.shop}</li>
+								</Link>
+							)}
 
 							<Link href='#contact' scroll={false} passHref>
 								<li>{navigation.contact}</li>

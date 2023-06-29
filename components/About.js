@@ -13,7 +13,7 @@ const About = ({ aboutText, aboutTitle }) => {
 				<p>{aboutText}</p>
 
 				<Link href='#contact' scroll={false} passHref>
-					<Button buttonWhite={false}>Get In Touch</Button>
+					<Button buttonWhite={false}>Let's Talk</Button>
 				</Link>
 			</div>
 		</section>

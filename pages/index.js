@@ -47,7 +47,8 @@ export async function getStaticProps() {
 }
 
 export default function Home({ homepage, podcast, services }) {
-	const { setNavigation, setServicesNav } = useNavContext()
+	const { setNavigation, setServicesNav, setShowPodcast, setShowShop } =
+		useNavContext()
 
 	useEffect(() => {
 		const nav = {
@@ -60,7 +61,11 @@ export default function Home({ homepage, podcast, services }) {
 
 		setNavigation(nav)
 		setServicesNav(services)
+		setShowPodcast(homepage.fields.showPodcast)
+		setShowShop(homepage.fields.showShop)
 	}, [])
+
+	console.log(homepage.fields.showPodcast)
 
 	return (
 		<>
@@ -92,16 +97,20 @@ export default function Home({ homepage, podcast, services }) {
 					servicesText={homepage.fields.services}
 					services={services}
 				/>
-				<Podcast
-					podcastTitle={homepage.fields.podcastTitle}
-					podcastText={homepage.fields.podcast}
-					episode={podcast}
-				/>
-				<Shop
-					shopTitle={homepage.fields.shopTitle}
-					shopText={homepage.fields.shop}
-					shopSamples={homepage.fields.shopSamples}
-				/>
+				{homepage.fields.showPodcast && (
+					<Podcast
+						podcastTitle={homepage.fields.podcastTitle}
+						podcastText={homepage.fields.podcast}
+						episode={podcast}
+					/>
+				)}
+				{homepage.fields.showShop && (
+					<Shop
+						shopTitle={homepage.fields.shopTitle}
+						shopText={homepage.fields.shop}
+						shopSamples={homepage.fields.shopSamples}
+					/>
+				)}
 				<Contact
 					contactTitle={homepage.fields.contactTitle}
 					contactText={homepage.fields.contact}
