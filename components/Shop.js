@@ -6,13 +6,11 @@ import Button from './Button'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Shop = ({ shopText, shopSamples }) => {
+const Shop = ({ shopText, shopTitle, shopSamples }) => {
 	return (
 		<>
 			<section id='shop' className={`${styles.shop} grid-container`}>
-				<h2>
-					Shop &<br /> Download
-				</h2>
+				<h2>{shopTitle}</h2>
 				<div className={styles.shopText}>
 					<p>{shopText}</p>
 

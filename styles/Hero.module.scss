@@ -39,6 +39,10 @@
 	flex-direction: column;
 	gap: base.$gap;
 	z-index: 2;
+
+	h1 {
+		max-width: 900px;
+	}
 }
 
 .buttons {

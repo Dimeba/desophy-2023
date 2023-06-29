@@ -18,7 +18,7 @@
 }
 
 .episode {
-	grid-column: 8 / 12;
+	grid-column: 8 / 13;
 	display: flex;
 	gap: base.$gap;
 }
@@ -27,11 +27,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: calc(base.$gap / 2);
+
+	h3 {
+		font-size: 1.875rem;
+	}
 }
 
 .episodeText h3,
 .episodeText p {
-	text-wrap: balance;
 	margin: 0;
 }
 
@@ -49,12 +52,6 @@
 	width: 100%;
 
 	aspect-ratio: 1/1;
-}
-
-@media screen and (max-width: 1280px) {
-	.episode {
-		grid-column: span 6;
-	}
 }
 
 @media screen and (max-width: 1024px) {
@@ -88,5 +85,11 @@
 
 	.episodePhoto {
 		width: 50%;
+	}
+
+	.episodeText {
+		h3 {
+			font-size: 1.5rem;
+		}
 	}
 }

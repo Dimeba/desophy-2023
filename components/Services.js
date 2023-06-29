@@ -4,7 +4,7 @@ import styles from '@/styles/Services.module.scss'
 // components
 import ServiceCard from './ServiceCard'
 
-const Services = ({ servicesText, services }) => {
+const Services = ({ servicesText, servicesTitle, services }) => {
 	return (
 		<>
 			<section id='services' className={styles.services}>
@@ -19,7 +19,7 @@ const Services = ({ servicesText, services }) => {
 			</section>
 
 			<section className={`${styles.servicesDescription} grid-container`}>
-				<h2>Our Services</h2>
+				<h2>{servicesTitle}</h2>
 				<div className={styles.servicesText}>
 					<p>{servicesText}</p>
 				</div>

@@ -5,10 +5,10 @@ import styles from '@/styles/About.module.scss'
 import Button from './Button'
 import Link from 'next/link'
 
-const About = ({ aboutText }) => {
+const About = ({ aboutText, aboutTitle }) => {
 	return (
 		<section id='about-us' className={`${styles.about} grid-container`}>
-			<h2>About Us</h2>
+			<h2>{aboutTitle}</h2>
 			<div className={styles.aboutText}>
 				<p>{aboutText}</p>
 

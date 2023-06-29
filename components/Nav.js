@@ -1,15 +1,18 @@
 import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
-
-// Components
-import Hamburger from './Hamburger'
 
 // styles
 import styles from '@/styles/Nav.module.scss'
 
-const Header = () => {
+// Components
+import Hamburger from './Hamburger'
+import Link from 'next/link'
+import Image from 'next/image'
+
+// hooks
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useNavContext } from '@/hooks/useNavContext'
+
+const Nav = () => {
 	// Scrolling Header
 	const [targetRef, isIntersecting] = useIntersectionObserver()
 
@@ -37,6 +40,9 @@ const Header = () => {
 		setHiddenMenuClas(styles.hidden)
 	}
 
+	// navigation
+	const { navigation } = useNavContext()
+
 	return (
 		<nav ref={targetRef}>
 			<header
@@ -57,31 +63,33 @@ const Header = () => {
 
 					<Hamburger toggleMenu={toggleMenu} menuClass={menuClass} />
 
-					<ul className={hiddenMenuClass}>
-						<Link href='#about-us' scroll={false} passHref>
-							<li onClick={() => closeMenu()}>About Us</li>
-						</Link>
+					{navigation && (
+						<ul className={hiddenMenuClass}>
+							<Link href='#about-us' scroll={false} passHref>
+								<li onClick={() => closeMenu()}>{navigation.about}</li>
+							</Link>
 
-						<Link href='#services' scroll={false} passHref>
-							<li onClick={() => closeMenu()}>Our Services</li>
-						</Link>
+							<Link href='#services' scroll={false} passHref>
+								<li onClick={() => closeMenu()}>{navigation.services}</li>
+							</Link>
 
-						<Link href='#podcast' scroll={false} passHref>
-							<li onClick={() => closeMenu()}>Blog & Podcast</li>
-						</Link>
+							<Link href='#podcast' scroll={false} passHref>
+								<li onClick={() => closeMenu()}>{navigation.podcast}</li>
+							</Link>
 
-						<Link href='#shop' scroll={false} passHref>
-							<li onClick={() => closeMenu()}>Shop & Download</li>
-						</Link>
+							<Link href='#shop' scroll={false} passHref>
+								<li onClick={() => closeMenu()}>{navigation.shop}</li>
+							</Link>
 
-						<Link href='#contact' scroll={false} passHref>
-							<li onClick={() => closeMenu()}>Get In Touch</li>
-						</Link>
-					</ul>
+							<Link href='#contact' scroll={false} passHref>
+								<li onClick={() => closeMenu()}>{navigation.contact}</li>
+							</Link>
+						</ul>
+					)}
 				</div>
 			</header>
 		</nav>
 	)
 }
 
-export default Header
+export default Nav

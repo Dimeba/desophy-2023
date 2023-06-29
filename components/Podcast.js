@@ -6,12 +6,12 @@ import Image from 'next/image'
 import Button from './Button'
 import Link from 'next/link'
 
-const Podcast = ({ podcastText, episode }) => {
+const Podcast = ({ podcastText, podcastTitle, episode }) => {
 	return (
 		<section id='podcast' className={styles.podcast}>
 			<div className='grid-container'>
 				<div className={styles.podcastText}>
-					<h2>Blog & Podcast</h2>
+					<h2>{podcastTitle}</h2>
 					<p>{podcastText}</p>
 				</div>
 

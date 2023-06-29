@@ -1,4 +1,10 @@
+import { useEffect } from 'react'
+
+// components
 import Head from 'next/head'
+
+// hooks
+import { useNavContext } from '@/hooks/useNavContext'
 
 // sections
 import Hero from '@/components/Hero'
@@ -41,6 +47,21 @@ export async function getStaticProps() {
 }
 
 export default function Home({ homepage, podcast, services }) {
+	const { setNavigation, setServicesNav } = useNavContext()
+
+	useEffect(() => {
+		const nav = {
+			about: homepage.fields.aboutTitle,
+			services: homepage.fields.servicesTitle,
+			podcast: homepage.fields.podcastTitle,
+			shop: homepage.fields.shopTitle,
+			contact: homepage.fields.contactTitle
+		}
+
+		setNavigation(nav)
+		setServicesNav(services)
+	}, [])
+
 	return (
 		<>
 			<Head>
@@ -62,14 +83,29 @@ export default function Home({ homepage, podcast, services }) {
 			</Head>
 			<>
 				<Hero title={homepage.fields.title} />
-				<About aboutText={homepage.fields.about} />
-				<Services servicesText={homepage.fields.services} services={services} />
-				<Podcast podcastText={homepage.fields.podcast} episode={podcast} />
+				<About
+					aboutTitle={homepage.fields.aboutTitle}
+					aboutText={homepage.fields.about}
+				/>
+				<Services
+					servicesTitle={homepage.fields.servicesTitle}
+					servicesText={homepage.fields.services}
+					services={services}
+				/>
+				<Podcast
+					podcastTitle={homepage.fields.podcastTitle}
+					podcastText={homepage.fields.podcast}
+					episode={podcast}
+				/>
 				<Shop
+					shopTitle={homepage.fields.shopTitle}
 					shopText={homepage.fields.shop}
 					shopSamples={homepage.fields.shopSamples}
 				/>
-				<Contact contactText={homepage.fields.contact} />
+				<Contact
+					contactTitle={homepage.fields.contactTitle}
+					contactText={homepage.fields.contact}
+				/>
 			</>
 		</>
 	)
