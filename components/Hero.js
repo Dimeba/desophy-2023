@@ -8,7 +8,7 @@ import Link from 'next/link'
 const Hero = ({ title }) => {
 	return (
 		<div className={`${styles.hero} grid-container`}>
-			<video className={styles.heroVideo} loop poster='/.jpg' autoPlay>
+			<video className={styles.heroVideo} loop poster='/hero.jpg' autoPlay>
 				<source src='/hero-video.mp4' type='video/mp4' />
 			</video>
 			<div className={styles.videoOverlay}></div>
