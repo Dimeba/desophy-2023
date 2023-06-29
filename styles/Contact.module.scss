@@ -66,6 +66,11 @@
 	.contact form {
 		grid-column: span 4;
 	}
+
+	.formContainer {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 @media screen and (max-width: 768px) {
