@@ -30,7 +30,7 @@ const Shop = ({ shopText, shopSamples }) => {
 					return (
 						<div key={sample.sys.id} className={styles.samplePhoto}>
 							<Image
-								src={'https://' + sample.fields.file.url}
+								src={'https:' + sample.fields.file.url}
 								fill
 								sizes='(max-width: 768px) 100vw, 768px'
 								alt={`Photo of shop item`}

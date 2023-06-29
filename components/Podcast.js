@@ -25,7 +25,7 @@ const Podcast = ({ podcastText, episode }) => {
 				<div className={styles.episodePhotos}>
 					<div className={styles.episodePhoto}>
 						<Image
-							src={'https://' + episode.fields.hostPhoto.fields.file.url}
+							src={'https:' + episode.fields.hostPhoto.fields.file.url}
 							fill
 							sizes='(max-width: 768px) 100vw, 768px'
 							alt={`Photo of `}
@@ -34,7 +34,7 @@ const Podcast = ({ podcastText, episode }) => {
 					</div>
 					<div className={styles.episodePhoto}>
 						<Image
-							src={'https://' + episode.fields.guestPhoto.fields.file.url}
+							src={'https:' + episode.fields.guestPhoto.fields.file.url}
 							fill
 							sizes='(max-width: 768px) 100vw, 768px'
 							alt={`Photo of `}

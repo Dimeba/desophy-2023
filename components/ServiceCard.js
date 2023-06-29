@@ -11,7 +11,7 @@ const ServiceCard = props => {
 			<div className={styles.service}>
 				<div className={styles.servicePhoto}>
 					<Image
-						src={'https://' + props.image.fields.file.url}
+						src={'https:' + props.image.fields.file.url}
 						fill
 						sizes='(max-width: 768px) 100vw, 768px'
 						alt={`Photo of service`}
