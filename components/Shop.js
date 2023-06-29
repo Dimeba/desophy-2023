@@ -26,9 +26,9 @@ const Shop = ({ shopText, shopSamples }) => {
 				</div>
 			</section>
 			<section className={styles.shopSamples}>
-				{shopSamples.map(sample => {
+				{shopSamples.map((sample, index) => {
 					return (
-						<div key={sample.sys.id} className={styles.samplePhoto}>
+						<div key={index} className={styles.samplePhoto}>
 							<Image
 								src={'https:' + sample.fields.file.url}
 								fill
