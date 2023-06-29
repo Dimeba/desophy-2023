@@ -10,7 +10,9 @@ const Shop = ({ shopText, shopSamples }) => {
 	return (
 		<>
 			<section id='shop' className={`${styles.shop} grid-container`}>
-				<h2>Shop & Download</h2>
+				<h2>
+					Shop &<br /> Download
+				</h2>
 				<div className={styles.shopText}>
 					<p>{shopText}</p>
 
