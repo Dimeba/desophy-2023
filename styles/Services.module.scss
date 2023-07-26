@@ -1,17 +1,18 @@
 @use 'base';
 
 .services {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	display: flex;
 	margin-top: calc(base.$margin * 2);
 
 	a {
-		width: auto;
+		flex-grow: 1;
+		flex-basis: 0;
 	}
 }
 
 .service {
 	position: relative;
+	width: 100%;
 }
 
 .service:hover .descriptionBackground,
@@ -81,7 +82,12 @@
 
 @media screen and (max-width: 1024px) {
 	.services {
-		grid-template-columns: repeat(2, 1fr);
+		margin-top: base.$margin;
+		flex-direction: column;
+
+		a {
+			width: 100%;
+		}
 	}
 
 	.servicesDescription {
@@ -100,11 +106,6 @@
 }
 
 @media screen and (max-width: 768px) {
-	.services {
-		margin-top: base.$margin;
-		grid-template-columns: 1fr;
-	}
-
 	.serviceTitle {
 		margin-left: auto;
 		margin-right: auto;
