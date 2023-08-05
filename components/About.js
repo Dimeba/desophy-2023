@@ -8,7 +8,7 @@ import Link from 'next/link'
 const About = ({ aboutText, aboutTitle }) => {
 	return (
 		<section id='about-us' className={`${styles.about} grid-container`}>
-			<h2>{aboutTitle}</h2>
+			{/* <h2>{aboutTitle}</h2> */}
 			<div className={styles.aboutText}>
 				<p>{aboutText}</p>
 

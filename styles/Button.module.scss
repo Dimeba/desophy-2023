@@ -6,7 +6,7 @@
 	width: fit-content;
 
 	p {
-		font-weight: 600;
+		font-weight: 400;
 		font-size: 1.125rem;
 		width: fit-content;
 		position: relative;
@@ -15,7 +15,7 @@
 
 .buttonTextColor {
 	width: fit-content;
-	color: base.$color-highlight !important;
+	color: base.$color-main !important;
 }
 
 .buttonTextWhite {
@@ -24,7 +24,7 @@
 }
 
 .preButtonLine {
-	border-top: 2px solid base.$color-highlight;
+	border-top: 1px solid base.$color-main;
 	width: 0;
 	margin-right: 0;
 }
@@ -36,14 +36,14 @@
 }
 
 .preButtonLineColor {
-	border-top: 2px solid base.$color-highlight;
+	border-top: 1px solid base.$color-main;
 	width: 0;
 	margin-right: 0;
 }
 
 .arrowHeadColor {
-	border-top: 2px solid base.$color-highlight;
-	border-right: 2px solid base.$color-highlight;
+	border-top: 1px solid base.$color-main;
+	border-right: 1px solid base.$color-main;
 	width: 10px;
 	height: 10px;
 	transform: rotate(45deg);
@@ -52,14 +52,14 @@
 }
 
 .preButtonLineWhite {
-	border-top: 2px solid white;
+	border-top: 1px solid white;
 	width: 0;
 	margin-right: 0;
 }
 
 .arrowHeadWhite {
-	border-top: 2px solid white;
-	border-right: 2px solid white;
+	border-top: 1px solid white;
+	border-right: 1px solid white;
 	width: 10px;
 	height: 10px;
 	transform: rotate(45deg);

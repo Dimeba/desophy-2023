@@ -19,7 +19,7 @@ const Services = ({ servicesText, servicesTitle, services }) => {
 			</section>
 
 			<section className={`${styles.servicesDescription} grid-container`}>
-				<h2>{servicesTitle}</h2>
+				{/* <h2>{servicesTitle}</h2> */}
 				<div className={styles.servicesText}>
 					<p>{servicesText}</p>
 				</div>

@@ -55,7 +55,7 @@ const Nav = () => {
 								src={isIntersecting ? 'logo-white.svg' : 'logo-black.svg'}
 								width={123}
 								height={30}
-								alt='DarkLeap Logo'
+								alt='DeSophy Logo'
 								priority={true}
 							/>
 						</div>

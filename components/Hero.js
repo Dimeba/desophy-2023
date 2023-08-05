@@ -5,7 +5,7 @@ import styles from '@/styles/Hero.module.scss'
 import Button from './Button'
 import Link from 'next/link'
 
-const Hero = ({ title }) => {
+const Hero = ({ title, subtitle }) => {
 	return (
 		<div className={styles.hero}>
 			<video className={styles.heroVideo} loop poster='/hero.jpg' autoPlay>
@@ -14,7 +14,10 @@ const Hero = ({ title }) => {
 			<div className={styles.videoOverlay}></div>
 			<div className={`grid-container ${styles.heroContainer}`}>
 				<div className={styles.heroContent}>
-					<h1>{title}</h1>
+					<div className={styles.titleContainer}>
+						<p className={styles.subtitle}>{subtitle}</p>
+						<p>{title}</p>
+					</div>
 
 					<div className={styles.buttons}>
 						<Link href='#services' scroll={false} passHref>

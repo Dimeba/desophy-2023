@@ -12,6 +12,7 @@ import About from '@/components/About'
 import Services from '@/components/Services'
 import Podcast from '@/components/Podcast'
 import Shop from '@/components/Shop'
+import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
 
 // contentful
@@ -87,7 +88,10 @@ export default function Home({ homepage, podcast, services }) {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<>
-				<Hero title={homepage.fields.title} />
+				<Hero
+					title={homepage.fields.title}
+					subtitle={homepage.fields.subtitle}
+				/>
 				<About
 					aboutTitle={homepage.fields.aboutTitle}
 					aboutText={homepage.fields.about}
@@ -111,6 +115,17 @@ export default function Home({ homepage, podcast, services }) {
 						shopSamples={homepage.fields.shopSamples}
 					/>
 				)}
+				{homepage.fields.showTestimonials && (
+					<Testimonials
+						testimonialName={homepage.fields.testimonialName}
+						testimonialTitle={homepage.fields.testimonialTitle}
+						testimonialCompany={homepage.fields.testimonialCompany}
+						testimonialQuote={homepage.fields.testimonialQuote}
+						testimonialPhoto={homepage.fields.testimonialPhoto}
+						testimonialLogo={homepage.fields.testimonialLogo}
+					/>
+				)}
+
 				<Contact
 					contactTitle={homepage.fields.contactTitle}
 					contactText={homepage.fields.contact}
