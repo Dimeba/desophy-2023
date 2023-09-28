@@ -66,8 +66,6 @@ export default function Home({ homepage, podcast, services }) {
 		setShowShop(homepage.fields.showShop)
 	}, [])
 
-	console.log(homepage.fields.showPodcast)
-
 	return (
 		<>
 			<Head>

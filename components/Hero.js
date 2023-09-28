@@ -8,7 +8,13 @@ import Link from 'next/link'
 const Hero = ({ title, subtitle }) => {
 	return (
 		<div className={styles.hero}>
-			<video className={styles.heroVideo} loop poster='/hero.jpg' autoPlay>
+			<video
+				className={styles.heroVideo}
+				loop
+				poster='/hero.jpg'
+				autoPlay
+				muted
+			>
 				<source src='/hero-video.mp4' type='video/mp4' />
 			</video>
 			<div className={styles.videoOverlay}></div>
